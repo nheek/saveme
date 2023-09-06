@@ -13,7 +13,15 @@
   border: 2px solid black;
 }
 
-.saving-target {
+#saving-target {
   border: 2px solid black;
-  border-radius: 20px;
+  border-radius: 5px;
+}
+.saving-target-button {
+  margin-top: 0.5rem;
+  background-color: none;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
 }
