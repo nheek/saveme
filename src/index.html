@@ -9,29 +9,35 @@
     <link href="./main.css" rel="stylesheet" />
   </head>
   <body class="bg-white min-h-screen min-w-full">
-    <div class="pattern-top w-screen" id="pattern-container">
-      <header class="min-w-full flex flex-col items-start justify-start">
-        <button class="pt-5 p-3 pl-10 mt-5 return">
-          <img src="./design/svg/arrow_back.svg" class="object-cover" />
-        </button>
-        <div class="text-container self-center">
-          <h5 class="text-xxs font-body">Eksempelbanken presenter</h5>
-          <h1 class="text-xl font-display">IMPULSKNAPPEN</h1>
+    <header class="min-w-full flex flex-col items-start justify-start">
+      <button class="pt-5 p-3 pl-10 mt-5 return">
+        <img src="./design/svg/arrow_back.svg" class="object-cover" />
+      </button>
+    </header>
+    <div class="top-container relative flex flex-col">
+      <div class="text-container absolute self-center">
+        <h5 class="text-xxs font-body">Eksempelbanken presenter</h5>
+        <h1 class="text-xl z-0 font-display">IMPULSKNAPPEN</h1>
+      </div>
+      <div
+        class="pattern-top w-screen py-5 z-10 flex flex-col"
+        id="pattern-container"
+      >
+        <img class="" src="./design/svg/pattern-top.svg" />
+        <div class="top-text w-screen font-body text-center text-xxs">
+          En krone her, en krone der
         </div>
-      </header>
+      </div>
     </div>
-    <main class="flex flex-col h-96">
-      <section class="top-text w-screen font-body text-center text-xxs">
-        En krone her, en krone der
-      </section>
-      <section class="middle-top h-full flex justify-center items-center">
+    <main class="flex gap-8 flex-col">
+      <section class="middle-top h-full mt-4 flex justify-center items-center">
         <button class="impulsknappen" id="impulsknappen">
           <img class="" src="./design/svg/impulsknappen.svg" />
         </button>
       </section>
       <section class="middle-bottom">
         <div
-          class="button-container font-body flex items-center justify-center"
+          class="button-container gap-5 font-body flex items-center justify-center"
         >
           <button class="arrow arrowdown flex items-center justify-center">
             <img class="" src="./design/svg/arrowdown.svg" />
@@ -46,6 +52,34 @@
           <button class="arrow arrowup flex items-center justify-center">
             <img class="" src="./design/svg/arrowup.svg" />
           </button>
+        </div>
+      </section>
+      <section class="bottom flex flex-row mt-16">
+        <div class="w-1/3 min-h-screen">
+          <img class="pattern-bottom" src="./design/svg/pattern-long.svg" />
+        </div>
+        <div class="w-2/3 content-bottom gap-6 flex flex-col items-start pr-6">
+          <h3 class="font-display w-full text-m">FORKLARING</h3>
+          <p class="font-body text-s">
+            Kjenner du at du sliter med å spare penger fordi det er så mye fett
+            å bruke dem på?
+          </p>
+          <p class="font-body text-s">
+            Med denne widgeten fra EKSEMPELBANK, kan du bare trykke på
+            IMPULSKNAPPEN når du skal til å impulshandle!
+          </p>
+          <p class="font-body text-s">
+            Pengene låses på IMPULSKONTOEN i banken din i minst 2 måneder.
+          </p>
+          <p class="font-body text-s">
+            Kanskje du kan bruke dem på syden-turen du har tenkt på så lenge?
+          </p>
+          <div class="input-area">
+            <label class="font-body" for="saving-target"
+              >Hva skal impulssparepengene dine gå til?</label
+            >
+            <input name="saving-target" class="bg-gray-200" type="text" />
+          </div>
         </div>
       </section>
     </main>
