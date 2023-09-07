@@ -16,3 +16,4 @@ Endre Innsatsmengde ved opp og ned knapp + ved å regne ut nærmeste
 5er fra tallet som skrives inn
 
 */
+
