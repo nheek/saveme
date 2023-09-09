@@ -7,6 +7,7 @@
     <title>Impulsknappen</title>
     <link href="/dist/output.css" rel="stylesheet" />
     <link href="./main.css" rel="stylesheet" />
+    <script src="./script.js" defer></script>
   </head>
   <body class="bg-white min-h-screen font-body min-w-full">
     <header class="min-w-full flex flex-col items-start justify-start">
@@ -30,24 +31,36 @@
       </div>
     </div>
     <main class="flex gap-8 flex-col">
-      <section class="middle-top h-full mt-4 flex justify-center items-center">
+      <section
+        class="middle-top h-full mt-4 flex justify-center relative items-center"
+      >
+        <div
+          id="click"
+          class="flex items-center justify-center absolute text-xl text-orange-500"
+        ></div>
         <button class="impulsknappen" id="impulsknappen">
           <img class="" src="./design/svg/impulsknappen.svg" />
         </button>
       </section>
       <section class="middle-bottom">
         <div class="button-container gap-5 flex items-center justify-center">
-          <button class="arrow arrowdown flex items-center justify-center">
+          <button
+            id="arrowDown"
+            class="arrow arrowdown flex items-center justify-center"
+          >
             <img class="" src="./design/svg/arrowdown.svg" />
           </button>
           <div class="button-container flex flex-col">
             <div class="flex flex-row items-center justify-around">
-              <p class="text-l">5</p>
+              <p class="text-l" id="inputValue"></p>
               <p class="text-s">KR</p>
             </div>
             <p class="text-xs">per trykk</p>
           </div>
-          <button class="arrow arrowup flex items-center justify-center">
+          <button
+            id="arrowUp"
+            class="arrow arrowup flex items-center justify-center"
+          >
             <img class="" src="./design/svg/arrowup.svg" />
           </button>
         </div>

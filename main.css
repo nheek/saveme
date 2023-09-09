@@ -5,14 +5,12 @@
   object-fit: cover;
   min-width: 1/6;
 }
-
 .arrow {
   width: 52px;
   height: 52px;
   border-radius: 40px;
   border: 2px solid black;
 }
-
 #saving-target {
   border: 2px solid black;
   border-radius: 5px;
@@ -24,4 +22,11 @@
   border-radius: 5px;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
+}
+
+#impulsknappen:active {
+  transform: scale(0.98);
+}
+button:active {
+  transform: scale(0.98);
 }
