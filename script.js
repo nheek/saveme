@@ -29,6 +29,7 @@ const countDisplay = document.getElementById('click');
 let displayInputValue = document.getElementById('inputValue');
 const localStorageInputValue = localStorage.getItem('amountPerClick');
 let inputValueChoices = [5, 10, 20, 50, 100,];
+let clickSessionsStorage = [];
 
 user = {
     standard: {
@@ -76,10 +77,12 @@ console.log(`currentInputValue: ${currentInputValue}`)
 upBtn.addEventListener('click', () => {
  let advance = true;
  moveInputValue(advance);
+ resetClickSession()
 })
 downBtn.addEventListener('click', () => {
     let advance = false;
     moveInputValue(advance);
+    resetClickSession()
 }) 
 
 let count = 0;
@@ -90,16 +93,26 @@ impulseBtn.addEventListener('click', () => {
 function clickSession() {
     let clickSessionObj = [
         {clicks: count,
-        clickValue: currentInputValue
+        clickValue: currentInputValue,
+        totalCost: count * currentInputValue,
     }
     ];
     function clickCounter() {
         count++
-        countDisplay.innerHTML = `${count * currentInputValue} `;
         clickSessionObj.clicks = count;
         clickSessionObj.clickValue = currentInputValue;
+        totalCost = count * currentInputValue;
+        countDisplay.innerHTML = `${totalCost}`
         return clickSessionObj
      }
      clickCounter();
+     clickSessionsStorage.unshift(clickSessionObj);
+ return console.log(clickSessionsStorage)
 }
 /* Clicksession -> hver gang man endrer innsats blir clicksession avsluttet og addert til ny klikk sessionStorage. */
+resetClickSession = () => {
+let previousCost = clickSessionsStorage[0].clickSessionObj.totalCost
+console.log(previousCost)
+count = 0;
+countDisplay.innerHTML = `${previousCost + totalCost}`
+}
