@@ -29,7 +29,6 @@ const countDisplay = document.getElementById('click');
 let displayInputValue = document.getElementById('inputValue');
 const localStorageInputValue = localStorage.getItem('amountPerClick');
 let inputValueChoices = [5, 10, 20, 50, 100,];
-let clickSessionsStorage = [];
 
 user = {
     standard: {
@@ -77,42 +76,36 @@ console.log(`currentInputValue: ${currentInputValue}`)
 upBtn.addEventListener('click', () => {
  let advance = true;
  moveInputValue(advance);
- resetClickSession()
 })
 downBtn.addEventListener('click', () => {
     let advance = false;
     moveInputValue(advance);
-    resetClickSession()
 }) 
 
-let count = 0;
+let count = 1;
 impulseBtn.addEventListener('click', () => {
     clickSession()
 })
 
-function clickSession() {
-    let clickSessionObj = [
-        {clicks: count,
-        clickValue: currentInputValue,
-        totalCost: count * currentInputValue,
+let clickSessionArr = [
+ ];
+
+function sumAllClicks() {
+    let totalCost = 0;
+    for (let i = 0; i < clickSessionArr.length; i++) {
+        totalCost += clickSessionArr[i]
     }
-    ];
+    countDisplay.innerText = `${totalCost}`;
+    return totalCost
+}
+let totalCost = 0;
+countDisplay.innerText = `${totalCost}`;
+function clickSession() {
     function clickCounter() {
         count++
-        clickSessionObj.clicks = count;
-        clickSessionObj.clickValue = currentInputValue;
-        totalCost = count * currentInputValue;
-        countDisplay.innerHTML = `${totalCost}`
-        return clickSessionObj
      }
      clickCounter();
-     clickSessionsStorage.unshift(clickSessionObj);
- return console.log(clickSessionsStorage)
-}
-/* Clicksession -> hver gang man endrer innsats blir clicksession avsluttet og addert til ny klikk sessionStorage. */
-resetClickSession = () => {
-let previousCost = clickSessionsStorage[0].clickSessionObj.totalCost
-console.log(previousCost)
-count = 0;
-countDisplay.innerHTML = `${previousCost + totalCost}`
+    clickSessionArr.push(currentInputValue);
+    sumAllClicks()
+    console.log(clickSessionArr)
 }
