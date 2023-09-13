@@ -7,17 +7,6 @@ const displayInputValue = document.getElementById('inputValue');
 const localStorageInputValue = localStorage.getItem('amountPerClick');
 let inputValueChoices = [5, 10, 20, 50, 100,];
 
-user = {
-    standard: {
-        inputValue: 5,
-    },
-    info: {
-        userName: "testuser",
-        id: 0,
-        inputValue: localStorageInputValue,
-    }
-}
-
 if(localStorageInputValue == 5)
 {
 currentInputValue = 5;
