@@ -1,5 +1,7 @@
 .pattern-top {
+  object-fit: cover;
   min-height: 150px;
+  max-height: 400px;
 }
 .pattern-bottom {
   object-fit: cover;
@@ -24,9 +26,57 @@
   padding-right: 0.3rem;
 }
 
-#impulsknappen:active {
+#impulsknappen {
+  transition: 0.3s;
+}
+#impulsknappen:active,
+#impulsknappen:hover {
   transform: scale(0.98);
 }
-button:active {
+button:active,
+button:hover {
   transform: scale(0.98);
+}
+
+#click {
+  min-height: 42px;
+  display: flex;
+  border-radius: 25px;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+
+.numAni {
+  animation: ani 0.7s linear;
+}
+
+@keyframes ani {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+#toBeCharged {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+  min-height: 50px;
+}
+
+.arrow {
+  transition: 0.2s;
+}
+.arrow:hover {
+  transform: scale(1.05);
 }
