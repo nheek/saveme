@@ -1,11 +1,11 @@
 ### stacc-challenge
 
-This is my submission for the Stacc challenge, please read ## heads-up to learn how to get the best intended results when using the application.
+This is my submission for the Stacc challenge, please read ## heads-up / how-to-run to learn how to get the best intended results when using the application.
 
-## heads-up
+## heads-up / how-to-run
 
 On this project I focused on making the app function for mobile devices with a min-with of 320px to a max-width of 550px.
-The reasoning for this is that the application is created to be used in a banking app. To get the best experience when using it I recommend opening on a laptop or computer, with inspect and choose any mobile dimensions. You can also just open the link on mobile and it will mostly work as intended. The project was built with: HTML,CSS,Javascript and Tailwind.
+The reasoning for this is that the application is created to be used in a banking app. To get the best experience when using it I recommend opening on a laptop or computer, with inspect and choose any mobile dimensions. You can open the link on mobile and it will mostly work as intended. The project was built with: HTML,CSS,Javascript and Tailwind.
 
 ## Links
 
