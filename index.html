@@ -9,12 +9,54 @@
     <link href="./main.css" rel="stylesheet" />
     <script src="./script.js" defer></script>
   </head>
-  <body class="bg-white min-h-screen relative font-body min-w-full">
+  <body class="bg-white min-h-screen font-body min-w-full">
     <header class="min-w-full flex flex-col items-start justify-start">
       <button class="pt-5 p-3 pl-10 mt-5 return">
         <img src="./design/svg/arrow_back.svg" class="object-cover" />
       </button>
     </header>
+    <section class="popUp">
+      <form class="account-change-container relative">
+        <h1 class="text-xl p-4">
+          Sett opp <b class="font-display">IMPULSKNAPPEN</b>
+        </h1>
+        <div class="input-area p-4">
+          <label class="" for="saving-target"
+            >Hva skal impulssparepengene dine gå til?</label
+          >
+          <div class="input-button-container">
+            <input
+              minlength="2"
+              required
+              name="saving-target"
+              id="saving-target"
+              class="bg-gray-200"
+              type="text"
+            />
+          </div>
+          <label class="" for="saving-lock-period"
+            >Hvor mange måneder vil du låse pengene dine etter du trykker på
+            knappen?</label
+          >
+          <div class="input-button-container mb-4">
+            <input
+              minlength="0"
+              required
+              name="saving-target-lock"
+              id="saving-target-lock"
+              class="bg-gray-200"
+              type="number"
+            />
+          </div>
+          <div class="button-container">
+            <button onclick="closePopUp()" class="popUpClose">Lukk</button>
+            <button type="submit" class="saving-target-button">
+              Lag konto
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
     <div class="top-container relative flex flex-col">
       <div class="text-container absolute self-center">
         <h5 class="text-xxs">Eksempelbanken presenter</h5>
@@ -85,18 +127,22 @@
           <p class="text-s">
             Kanskje du kan bruke dem på syden-turen du har tenkt på så lenge?
           </p>
-          <div class="input-area">
-            <label class="" for="saving-target"
-              >Hva skal impulssparepengene dine gå til?</label
+          <div class="showAccountCard">
+            <p>Du sparer til:</p>
+            <div class="account-card gap-2">
+              <div class="container">
+                <h5 class="savings-goal-account text-xs">0</h5>
+                <p class="savings-goal-account-nr text-xs">0</p>
+              </div>
+              <div class="container">
+                <div class="total-saved text-xs text-end">0</div>
+                <p class="total-saved-timeLock text-xs text-end">0</p>
+              </div>
+            </div>
+            <div
+              class="button-container w-100 flex align-center justify-center gap-7 mt-5"
             >
-            <div class="input-button-container">
-              <input
-                name="saving-target"
-                id="saving-target"
-                class="bg-gray-200"
-                type="text"
-              />
-              <button class="saving-target-button">Lag konto</button>
+              <button class="endre">Endre</button>
             </div>
           </div>
         </div>

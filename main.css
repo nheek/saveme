@@ -13,19 +13,6 @@
   border-radius: 40px;
   border: 2px solid black;
 }
-#saving-target {
-  border: 2px solid black;
-  border-radius: 5px;
-}
-.saving-target-button {
-  margin-top: 0.5rem;
-  background-color: none;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding-left: 0.3rem;
-  padding-right: 0.3rem;
-}
-
 #impulsknappen {
   transition: 0.3s;
 }
@@ -44,9 +31,7 @@ button:hover {
   border-radius: 25px;
   align-items: center;
   justify-content: center;
-  justify-self: center;
 }
-
 .numAni {
   animation: ani 0.7s linear;
 }
@@ -79,4 +64,99 @@ button:hover {
 }
 .arrow:hover {
   transform: scale(1.05);
+}
+.account-card {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  padding: 0.5rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.popUp {
+  top: 0;
+  z-index: 99;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+}
+.account-change-container {
+  flex-direction: column;
+  margin-top: 150px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  min-height: 350px;
+  width: 90%;
+}
+#saving-target {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.saving-target-button {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  width: 150px;
+  height: 40px;
+  margin-bottom: 1rem;
+  align-self: center;
+}
+.popUpClose {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  max-width: 150px;
+  min-width: 80px;
+  height: 40px;
+  align-self: center;
+  margin-bottom: 1rem;
+}
+.button-container {
+  display: flex;
+  gap: 1rem;
+}
+#saving-target-lock {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.endre {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  width: 150px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+.lukk {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  max-width: 150px;
+  height: 40px;
+  margin-bottom: 1rem;
 }
