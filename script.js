@@ -4,13 +4,15 @@ const upBtn = document.getElementById('arrowUp');
 const countDisplay = document.getElementById('click');
 const toBeCharged = document.getElementById('toBeCharged');
 const displayInputValue = document.getElementById('inputValue');
-const localStorageInputValue = localStorage.getItem('amountPerClick');
+let localStorageInputValue = localStorage.getItem('amountPerClick') || 5;
 let inputValueChoices = [5, 10, 20, 50, 100,];
 const savingsGoal = localStorage.getItem('savings-goal');
 const savingGoalInput = document.getElementById('saving-target')
 const savingGoalBtn = document.querySelector('.saving-target-button');
 const lockTime = localStorage.getItem('savings-goal-locked');
 const popUpElement = document.querySelector('.popUp');
+const form = document.querySelector('form');
+
 
 if(localStorageInputValue == 5)
 {
@@ -93,23 +95,21 @@ function ani() {
     let previousSaved = Number(localStorage.getItem('totalSaved'));
     let currentSessionSaved = Number(sessionStorage.getItem('SavedInSession'));
     let totalSaved =  previousSaved + currentSessionSaved
-    for (let i = 0; i < clickSessionArr.length; i++) {
-        totalSaved += clickSessionArr[i]
-    }
     countDisplay.innerText = `${totalSaved}`;
     toBeCharged.innerHTML = `Nå har du spart ${totalSaved}kr på impulskjøp :) Kjempe bra!`;
     sessionStorage.setItem('SavedInSession', totalSaved)
     localStorage.setItem('totalSaved', totalSaved);
-    return totalCost
+    return totalSaved
   }
 
-  savingGoalBtn.addEventListener('click', ()=> {
+  form.addEventListener('submit', (event)=> {
     let savingGoal = savingGoalInput.value;
     let savingGoalLocked = Number(document.querySelector('#saving-target-lock').value)
     localStorage.setItem('savings-goal', savingGoal)
     localStorage.setItem('savings-goal-locked', savingGoalLocked)
     showSavingsAccount();
-})
+}) 
+
 
 let user = {
     preferredInputValue: localStorageInputValue,
@@ -124,15 +124,12 @@ let user = {
 function showSavingsAccount() {
    document.querySelector('.total-saved').innerText = `${user.totalSaved}NOK`
    document.querySelector('.savings-goal-account').innerText = `${user.account.sparemål}`
-   document.querySelector('.savings-goal-account-nr').innerText = `${user.account.accountNr}`
    document.querySelector('.total-saved-timeLock').innerText = `Låst(${lockTime}mnd)`
 }
 
 document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('click', (event) => {
         if (event.target.classList.contains('endre')) {
-            localStorage.removeItem('savings-goal-locked')
-            localStorage.removeItem('savings-goal')
             window.scrollTo({
                 top: 0,
                 behavior: "smooth",
@@ -144,7 +141,11 @@ document.addEventListener('click', (event) => {
 function checkAccount() {
     if(savingsGoal !== null) {
         closePopUp();
-    } else{
+    }
+    else if(savingsGoal == null){
+        popUp()
+    }
+    else {
         popUp()
     }
 }
