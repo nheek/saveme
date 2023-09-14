@@ -16,9 +16,9 @@
 #impulsknappen {
   transition: 0.3s;
 }
-#impulsknappen:active,
-#impulsknappen:hover {
-  transform: scale(0.98);
+
+#impulsknappen:active {
+  transform: scale(1.15);
 }
 button:active,
 button:hover {
