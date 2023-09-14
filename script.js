@@ -12,7 +12,7 @@ const savingGoalBtn = document.querySelector('.saving-target-button');
 const lockTime = localStorage.getItem('savings-goal-locked');
 const popUpElement = document.querySelector('.popUp');
 const form = document.querySelector('form');
-
+const closePopUpbtn = document.querySelector('.popUpClose')
 
 if(localStorageInputValue == 5)
 {
@@ -134,6 +134,7 @@ document.addEventListener('click', (event) => {
                 top: 0,
                 behavior: "smooth",
               });
+              closePopUpbtn.style.display = "block";
               popUp();
         }
     });
@@ -144,6 +145,7 @@ function checkAccount() {
     }
     else if(savingsGoal == null){
         popUp()
+        closePopUpbtn.style.display = "none";
     }
     else {
         popUp()
