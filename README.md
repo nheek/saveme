@@ -26,6 +26,6 @@ The user enters the desired input value, and each click the current inputvalue i
 
 I suddenly thought of ideas to add to the project all the time. I therefore started adding more and more things before I had the chance to finish the first idea! A valuable lesson I learned from that is too write down the ideas and finish the original product beforehand. Building this website has taught me a lot about localStorage and sessionStorage that I did not previously know.
 
-# regrets
+### regrets
 
 Some functionality is very hard to achieve on a mobile browser and I lack some things I would have liked to have included. If I had more time I would have built the app in React Native, but the delivery deadline made it hard to learn in time. This project is therefore more of a prototype than an actual App.
