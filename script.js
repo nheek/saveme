@@ -166,3 +166,13 @@ window.addEventListener('beforeunload', () => {
         setSavedAmount();
         sessionStorage.setItem('SavedInSession', 0)
 });
+window.addEventListener('pagehide', ()=> {
+    alert("Sending last data to localstorage, bye bye:)")
+    setSavedAmount();
+    sessionStorage.setItem('SavedInSession', 0)
+})
+window.addEventListener('unload', ()=> {
+    alert("Sending last data to localstorage, bye bye:)")
+    setSavedAmount();
+    sessionStorage.setItem('SavedInSession', 0)
+})
