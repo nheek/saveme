@@ -1,0 +1,23 @@
+services:
+  saveme:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    image: "reg.nheek.com/nheek/svendsen-realfag:latest"
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - postgres_db_data:/var/lib/postgresql/data
+      - .sql_data:/docker-entrypoint-initdb.d/
+
+volumes:
+  postgres_db_data:
