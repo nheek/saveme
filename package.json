@@ -3,7 +3,11 @@
     "tailwindcss": "^3.4.17"
   },
   "scripts": {
+    "prettier": "prettier --write .",
     "build": "npx tailwindcss -i ./input.css -o ./output.css",
     "watch": "npx tailwindcss -i ./input.css -o ./output.css --watch"
+  },
+  "dependencies": {
+    "prettier": "^3.4.2"
   }
 }
